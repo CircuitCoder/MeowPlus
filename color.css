@@ -1,0 +1,24 @@
+.row-first {
+  --left-color: #f44336;
+  --right-color: #7b1fa2;
+}
+
+.row-second {
+  --left-color: #00bcd4;
+  --right-color: #1976d2;
+}
+
+.row-third {
+  --left-color: #8bc34a;
+  --right-color: #0097a7;
+}
+
+.row-forth {
+  --left-color: #f57f17;
+  --right-color: #d84315;
+}
+
+.row-fifth {
+  --left-color: #bdbdbd;
+  --right-color: #78909c;
+}
