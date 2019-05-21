@@ -10,9 +10,9 @@
 body {
   --background: #121212;
 
-  --row-height: 140px;
-  --row-max-width: 600px;
-  --row-margin: 20px;
+  --row-height: 100px;
+  --row-max-width: 640px;
+  --row-margin: 40px;
   --row-padding: 30px;
   --row-gap: 0px;
 
@@ -24,9 +24,9 @@ body {
   --step-duration: .25s;
   --step-interval: 0s;
 
-  --escape-width: 10px;
+  --escape-width: 20px;
   --escape-duration: .5s;
-  --escape-dist: 20px;
+  --escape-dist: 40px;
 
   box-sizing: border-box;
   margin: 0;
@@ -42,7 +42,7 @@ body {
 
 main {
   max-width: calc(var(--row-max-width) + 80px);
-  padding: 60px 40px;
+  padding: 60px 20px;
   margin: 0 auto;
 }
 
@@ -62,8 +62,8 @@ main {
   position: absolute;
   left: var(--row-margin);
   right: var(--row-margin);
-  bottom: var(--row-margin);
-  top: var(--row-margin);
+  bottom: 0;
+  top: 0;
   cursor: pointer;
   z-index: 2;
 }
@@ -74,7 +74,7 @@ main {
   right: 0;
   top: 0;
   bottom: 0;
-  padding: var(--row-margin) calc(var(--row-margin) + var(--row-padding));
+  padding: 0 calc(var(--row-margin) + var(--row-padding));
   z-index: 0;
 
   background: linear-gradient(to top right, var(--left-color), var(--right-color));
@@ -91,6 +91,7 @@ main {
 .shift {
   flex: 1;
   position: relative;
+  max-width: calc(100% - 48px);
 }
 
 .shift > * {
@@ -104,10 +105,10 @@ main {
   justify-content: center;
   flex-direction: column;
 
-  transition-property: transform opacity;
-  transition-timing-function: ease;
-  transition-duration: var(--step-duration);
-  transition-delay: 0;
+  transition-property: transform, opacity;
+  transition-timing-function: ease, ease;
+  transition-duration: var(--step-duration), var(--step-duration);
+  transition-delay: 0s, 0s;
 }
 
 .action:hover ~ .overlap > .shift > * {
@@ -131,6 +132,7 @@ main {
 .secondary {
   opacity: 0;
   transform: translateY(var(--shift-dist));
+  position: relative;
 }
 
 .action:hover ~ .overlap > .shift > .primary {
@@ -154,13 +156,45 @@ main {
 }
 
 .secondary-hint {
-  font-size: 25px;
+  font-size: 20px;
   line-height: 30px;
+  font-weight: 900;
 }
 
-.secondary-link {
-  font-size: 10px;
+.secondary-link, .secondary-source {
+  font-size: 15px;
   line-height: 15px;
+
+  transition-property: opacity, transform;
+  transition-timing-function: ease, ease;
+  transition-delay: 0s, 0s;
+  transition-duration: var(--step-duration);
+
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.secondary-source {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  opacity: 0;
+  transform: translateX(calc(0px - var(--shift-dist)));
+}
+
+.action:hover ~ .overlap .secondary-link {
+  transition-delay: 1s, 1s;
+  opacity: 0;
+  transform: translateX(var(--shift-dist));
+}
+
+.action:hover ~ .overlap .secondary-source {
+  transition-delay: 1s, 1s;
+  opacity: 1;
+  transform: none;
 }
 
 .overlap {
@@ -169,11 +203,11 @@ main {
   right: 0;
   top: 0;
   bottom: 0;
-  padding: var(--row-margin) calc(var(--row-margin) + var(--row-padding));
+  padding: 0 calc(var(--row-margin) + var(--row-padding));
   z-index: 1;
 
   background: linear-gradient(to top right, var(--left-color), var(--right-color));
-  clip-path: inset(var(--row-margin) 100% var(--row-margin) 0);
+  clip-path: inset(0 100% 0 0);
 
   transition-property: clip-path;
   transition-duration: var(--step-duration);
@@ -190,12 +224,12 @@ main {
 }
 
 .action:hover ~ .overlap {
-  clip-path: inset(var(--row-margin));
+  clip-path: inset(0 var(--row-margin));
   transition-delay: 0s;
 }
 
 .row:focus .overlap {
-  clip-path: inset(var(--row-margin));
+  clip-path: inset(0 var(--row-margin));
   transition-delay: 0s;
 }
 
@@ -208,25 +242,25 @@ main {
   z-index: 1;
 
   background: linear-gradient(to top right, var(--left-color), var(--right-color));
-  clip-path: inset(var(--row-margin) var(--row-margin) var(--row-margin) calc(100% - var(--row-margin) - var(--escape-width)));
+  clip-path: inset(0 var(--row-margin) 0 calc(100% - var(--row-margin) - var(--escape-width)));
   opacity: 0;
 }
 
 .action:hover ~ .escape {
   opacity: 1;
   transition: opacity 0s var(--step-duration) linear, clip-path var(--escape-duration) var(--step-duration) ease;
-  clip-path: inset(var(--row-margin)
+  clip-path: inset(0
     calc(var(--row-margin) - var(--escape-dist))
-    var(--row-margin)
+    0
     calc(100% - var(--row-margin) + var(--escape-dist)));
 }
 
 .row:focus .escape {
   opacity: 1;
   transition: opacity 0s var(--step-duration) linear, clip-path var(--escape-duration) var(--step-duration) ease;
-  clip-path: inset(var(--row-margin)
+  clip-path: inset(0
     calc(var(--row-margin) - var(--escape-dist))
-    var(--row-margin)
+    0
     calc(100% - var(--row-margin) + var(--escape-dist)));
 }
 
@@ -235,8 +269,9 @@ main {
   color: white;
   opacity: .24;
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   display: block;
+  user-select: none;
 }
 
 .brand img {
