@@ -197,6 +197,18 @@ main {
   transform: none;
 }
 
+.row:focus .overlap .secondary-link {
+  transition-delay: 1s, 1s;
+  opacity: 0;
+  transform: translateX(var(--shift-dist));
+}
+
+.row:focus .overlap .secondary-source {
+  transition-delay: 1s, 1s;
+  opacity: 1;
+  transform: none;
+}
+
 .overlap {
   position: absolute;
   left: 0;
