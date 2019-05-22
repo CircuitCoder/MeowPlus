@@ -1,11 +1,11 @@
 .row-first {
-  --left-color: #f44336;
-  --right-color: #7b1fa2;
+  --left-color: #ef5350;
+  --right-color: #673ab7;
 }
 
 .row-second {
   --left-color: #00bcd4;
-  --right-color: #1976d2;
+  --right-color: #3f51b5;
 }
 
 .row-third {
@@ -15,10 +15,42 @@
 
 .row-forth {
   --left-color: #f57f17;
-  --right-color: #d84315;
+  --right-color: #e53935;
 }
 
 .row-fifth {
   --left-color: #bdbdbd;
   --right-color: #78909c;
+}
+
+.color-first {
+  background-color: #212121;
+}
+
+.color-second {
+  background-color: #002b36;
+}
+
+.color-third {
+  background-color: rgb(38, 50, 56);
+}
+
+.color-forth {
+  background-color: rgb(40, 33, 28);
+}
+
+#color-first-anchor:checked ~ main {
+  --background: #212121;
+}
+
+#color-second-anchor:checked ~ main {
+  --background: #002b36;
+}
+
+#color-third-anchor:checked ~ main {
+  --background: rgb(38, 50, 56);
+}
+
+#color-forth-anchor:checked ~ main {
+  --background: rgb(40, 33, 28);
 }

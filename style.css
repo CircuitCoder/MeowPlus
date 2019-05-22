@@ -8,8 +8,12 @@
 }
 
 body {
-  --background: #121212;
+  box-sizing: border-box;
+  margin: 0;
+  overflow-x: hidden;
+}
 
+main {
   --row-height: 100px;
   --row-max-width: 640px;
   --row-margin: 40px;
@@ -28,19 +32,18 @@ body {
   --escape-duration: .5s;
   --escape-dist: 40px;
 
-  box-sizing: border-box;
-  margin: 0;
-  background: var(--background);
+  background-color: var(--background);
   min-height: 100vh;
+  transition: background-color .2s ease;
 }
 
 @media (max-width: 670px) {
-  body {
+  main {
     --primary-text-size: 32px;
   }
 }
 
-main {
+.container {
   max-width: calc(var(--row-max-width) + 80px);
   padding: 60px 20px;
   margin: 0 auto;
@@ -221,10 +224,10 @@ main {
   background: linear-gradient(to top right, var(--left-color), var(--right-color));
   clip-path: inset(0 100% 0 0);
 
-  transition-property: clip-path;
-  transition-duration: var(--step-duration);
-  transition-timing-function: ease;
-  transition-delay: calc(var(--step-duration) + var(--step-interval));
+  transition-property: clip-path, color;
+  transition-duration: var(--step-duration), .2s;
+  transition-timing-function: ease, ease;
+  transition-delay: calc(var(--step-duration) + var(--step-interval)), 0s;
 
   display: flex;
   align-items: center;
@@ -281,7 +284,7 @@ main {
   color: white;
   opacity: .24;
   font-size: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   display: block;
   user-select: none;
 }
@@ -289,6 +292,8 @@ main {
 .brand img {
   cursor: grab;
   height: 160px;
+  user-drag: none;
+  -webkit-user-drag: none;
 }
 
 .brand-text {
@@ -313,4 +318,50 @@ main {
 
 .mouse:hover img {
   transform: translateX(60px);
+}
+
+.colors {
+  text-align: center;
+  font-size: 0;
+  margin-bottom: 40px;
+}
+
+.color {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+
+  transform: scale(1);
+  transition: transform .2s ease, border-color .2s ease;
+  border: rgba(255,255,255, .3) 1px solid;
+  background-clip: border-box;
+}
+
+.color:hover {
+  border-color: rgba(255,255,255,.6);
+}
+
+.color-anchor {
+  position: fixed;
+  height: 0;
+  top: -100vh;
+}
+
+/* Manual loop, oops */
+
+#color-first-anchor:checked ~ main .color-first,
+#color-second-anchor:checked ~ main .color-second,
+#color-third-anchor:checked ~ main .color-third,
+#color-forth-anchor:checked ~ main .color-forth {
+  border-color: rgba(255,255,255,.1);
+  transform: scale(0.9);
+}
+
+#color-first-anchor:checked ~ main .color-first:hover,
+#color-second-anchor:checked ~ main .color-second:hover,
+#color-third-anchor:checked ~ main .color-third:hover,
+#color-forth-anchor:checked ~ main .color-forth:hover {
+  transform: scale(0.9);
 }

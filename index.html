@@ -8,172 +8,198 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <input class="color-anchor" type="radio" id="color-first-anchor" name="color" value="first" checked></input>
+    <input class="color-anchor" type="radio" id="color-second-anchor" name="color" value="second"></input>
+    <input class="color-anchor" type="radio" id="color-third-anchor" name="color" value="third"></input>
+    <input class="color-anchor" type="radio" id="color-forth-anchor" name="color" value="forth"></input>
+
+    <div class="mouse">
+      <img src="mouse.png" />
+    </div>
+
     <main>
-      <div class="mouse">
-        <img src="mouse.png" />
-      </div>
-
-      <div class="brand">
-        <img src="cat.png" />
-        <div class="brand-text">
-          /* meow + meow + meow */
+      <div class="container">
+        <div class="brand">
+          <img src="cat.png" />
+          <div class="brand-text">
+            /* meow + meow + meow */
+          </div>
         </div>
-      </div>
 
-      <a class="row row-first" href="https://meow.c-3.moe">
-        <div class="action"></div>
-        <div class="overlap">
-          <div class="shift">
+        <div class="colors">
+          <label class="color color-first" for="color-first-anchor"></label>
+          <label class="color color-second" for="color-second-anchor"></label>
+          <label class="color color-third" for="color-third-anchor"></label>
+          <label class="color color-forth" for="color-forth-anchor"></label>
+        </div>
+
+        <a class="row row-first" href="https://meow.c-3.moe">
+          <div class="action"></div>
+          <div class="overlap">
+            <div class="shift">
+              <div class="primary">
+                C3Meow
+              </div>
+              <div class="secondary">
+                <div class="secondary-hint">
+                  A 喵喵 Blog
+                </div>
+                <div class="secondary-link">
+                  https://meow.c-3.moe
+                </div>
+                <div class="secondary-source">
+                  CircuitCoder/C3Meow
+                </div>
+              </div>
+            </div>
+            <i class="material-icons right-arrow">keyboard_arrow_right</i>
+          </div>
+          <div class="base">
             <div class="primary">
               C3Meow
             </div>
-            <div class="secondary">
-              <div class="secondary-hint">
-                A 喵喵 Blog
+            <i class="material-icons right-arrow">keyboard_arrow_right</i>
+          </div>
+
+          <div class="escape"></div>
+        </a>
+
+        <a class="row row-second" href="https://bpindex.c-3.moe">
+          <div class="action"></div>
+          <div class="overlap">
+            <div class="shift">
+              <div class="primary">
+                BPIndex
               </div>
-              <div class="secondary-link">
-                https://meow.c-3.moe
-              </div>
-              <div class="secondary-source">
-                CircuitCoder/C3Meow
+              <div class="secondary">
+                <div class="secondary-hint">
+                  A 厕纸 Index
+                </div>
+                <div class="secondary-link">
+                  https://bpindex.c-3.moe
+                </div>
+                <div class="secondary-source">
+                  CircuitCoder/BPIndex
+                </div>
               </div>
             </div>
+            <i class="material-icons right-arrow">keyboard_arrow_right</i>
           </div>
-          <i class="material-icons right-arrow">keyboard_arrow_right</i>
-        </div>
-        <div class="base">
-          <div class="primary">
-            C3Meow
-          </div>
-          <i class="material-icons right-arrow">keyboard_arrow_right</i>
-        </div>
-
-        <div class="escape"></div>
-      </a>
-
-      <a class="row row-second" href="https://bpindex.c-3.moe">
-        <div class="action"></div>
-        <div class="overlap">
-          <div class="shift">
+          <div class="base">
             <div class="primary">
               BPIndex
             </div>
-            <div class="secondary">
-              <div class="secondary-hint">
-                A 厕纸 Index
+            <i class="material-icons right-arrow">keyboard_arrow_right</i>
+          </div>
+
+          <div class="escape"></div>
+        </a>
+
+        <a class="row row-third" href="https://playlist.meow.plus/meow">
+          <div class="action"></div>
+          <div class="overlap">
+            <div class="shift">
+              <div class="primary">
+                BiliCast
               </div>
-              <div class="secondary-link">
-                https://bpindex.c-3.moe
-              </div>
-              <div class="secondary-source">
-                CircuitCoder/BPIndex
+              <div class="secondary">
+                <div class="secondary-hint">
+                  A 歌单 Service
+                </div>
+                <div class="secondary-link">
+                  https://playlist.meow.plus/meow
+                </div>
+                <div class="secondary-source">
+                  CircuitCoder/bilicast
+                </div>
               </div>
             </div>
+            <i class="material-icons right-arrow">keyboard_arrow_right</i>
           </div>
-          <i class="material-icons right-arrow">keyboard_arrow_right</i>
-        </div>
-        <div class="base">
-          <div class="primary">
-            BPIndex
-          </div>
-          <i class="material-icons right-arrow">keyboard_arrow_right</i>
-        </div>
-
-        <div class="escape"></div>
-      </a>
-
-      <a class="row row-third" href="https://playlist.meow.plus/meow">
-        <div class="action"></div>
-        <div class="overlap">
-          <div class="shift">
+          <div class="base">
             <div class="primary">
               BiliCast
             </div>
-            <div class="secondary">
-              <div class="secondary-hint">
-                A 歌单 Service
+            <i class="material-icons right-arrow">keyboard_arrow_right</i>
+          </div>
+
+          <div class="escape"></div>
+        </a>
+
+        <a class="row row-forth" href="https://github.com/CircuitCoder/bgm.rs">
+          <div class="action"></div>
+          <div class="overlap">
+            <div class="shift">
+              <div class="primary">
+                bgm.rs
               </div>
-              <div class="secondary-link">
-                https://playlist.meow.plus/meow
-              </div>
-              <div class="secondary-source">
-                CircuitCoder/bilicast
+              <div class="secondary">
+                <div class="secondary-hint">
+                  A 番组 Client
+                </div>
+                <div class="secondary-link">
+                  On GitHub
+                </div>
+                <div class="secondary-source">
+                  CircuitCoder/bgm.rs
+                </div>
               </div>
             </div>
+            <i class="material-icons right-arrow">keyboard_arrow_right</i>
           </div>
-          <i class="material-icons right-arrow">keyboard_arrow_right</i>
-        </div>
-        <div class="base">
-          <div class="primary">
-            BiliCast
-          </div>
-          <i class="material-icons right-arrow">keyboard_arrow_right</i>
-        </div>
-
-        <div class="escape"></div>
-      </a>
-
-      <a class="row row-forth" href="https://github.com/CircuitCoder/bgm.rs">
-        <div class="action"></div>
-        <div class="overlap">
-          <div class="shift">
+          <div class="base">
             <div class="primary">
               bgm.rs
             </div>
-            <div class="secondary">
-              <div class="secondary-hint">
-                A 番组 Client
+            <i class="material-icons right-arrow">keyboard_arrow_right</i>
+          </div>
+
+          <div class="escape"></div>
+        </a>
+
+        <a class="row row-fifth" href="https://c-3.moe">
+          <div class="action"></div>
+          <div class="overlap">
+            <div class="shift">
+              <div class="primary">
+                C3Hub
               </div>
-              <div class="secondary-link">
-                On GitHub
-              </div>
-              <div class="secondary-source">
-                CircuitCoder/bgm.rs
+              <div class="secondary">
+                <div class="secondary-hint">
+                  A 喵喵 Home
+                </div>
+                <div class="secondary-link">
+                  https://c-3.moe
+                </div>
+                <div class="secondary-source">
+                  CircuitCoder/C3Home
+                </div>
               </div>
             </div>
+            <i class="material-icons right-arrow">keyboard_arrow_right</i>
           </div>
-          <i class="material-icons right-arrow">keyboard_arrow_right</i>
-        </div>
-        <div class="base">
-          <div class="primary">
-            bgm.rs
-          </div>
-          <i class="material-icons right-arrow">keyboard_arrow_right</i>
-        </div>
-
-        <div class="escape"></div>
-      </a>
-
-      <a class="row row-fifth" href="https://c-3.moe">
-        <div class="action"></div>
-        <div class="overlap">
-          <div class="shift">
+          <div class="base">
             <div class="primary">
               C3Hub
             </div>
-            <div class="secondary">
-              <div class="secondary-hint">
-                A 喵喵 Home
-              </div>
-              <div class="secondary-link">
-                https://c-3.moe
-              </div>
-              <div class="secondary-source">
-                CircuitCoder/C3Home
-              </div>
-            </div>
+            <i class="material-icons right-arrow">keyboard_arrow_right</i>
           </div>
-          <i class="material-icons right-arrow">keyboard_arrow_right</i>
-        </div>
-        <div class="base">
-          <div class="primary">
-            C3Hub
-          </div>
-          <i class="material-icons right-arrow">keyboard_arrow_right</i>
-        </div>
 
-        <div class="escape"></div>
-      </a>
+          <div class="escape"></div>
+        </a>
+      </div>
     </main>
+    <style>
+      /* default background */
+      main {
+        --background: #212121;
+      }
+    </style>
+    <!--
+      Empty script to fix transition
+      Oh Chrome plz
+      https://stackoverflow.com/a/42969608
+    -->
+    <script> </script>
   </body>
 </html>
