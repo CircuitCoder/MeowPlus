@@ -19,6 +19,11 @@
 }
 
 .row-fifth {
+  --left-color: #ffcdd2;
+  --right-color: #ffe082;
+}
+
+.row-sixth {
   --left-color: #bdbdbd;
   --right-color: #78909c;
 }
